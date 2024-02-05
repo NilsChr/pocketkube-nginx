@@ -21,7 +21,13 @@ export const nginx = {
 
     nginxConfig += this.httpsBlock(nginxInstances);
     const filePath= path.join(__dirname,"..", "..", "output-nginx", "nginx.conf")
-    nginxConfig = `http {
+    nginxConfig = `
+    
+events {
+    worker_connections  4096;  ## Default: 1024
+}
+
+http {
       ${nginxConfig}
 }`
     writeStringToFile(filePath, nginxConfig)
