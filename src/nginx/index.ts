@@ -14,6 +14,7 @@ export const nginx = {
     nginxConfig += "\n";
 
     let nginxInstances = "";
+    nginxInstances += this.instanceBlock("admin", 8000) + "\n";
     for (let instance of instances) {
       nginxInstances +=
         this.instanceBlock(instance.title, instance.activePORT) + "\n";
