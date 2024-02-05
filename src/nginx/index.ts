@@ -70,16 +70,14 @@ export const nginx = {
   },
   httpsBlock(instanceBlocks) {
     return `server {
-        listen 443 ssl;
+        listen 443 ssl http2;
+        listen [::]:443 ssl http2;
         server_name ${process.env.DOMAIN};
-        server_tokens off;
     
         ssl_certificate ${process.env.CERT};
         ssl_certificate_key ${process.env.KEY};
-        include /etc/letsencrypt/options-ssl-nginx.conf;
-        ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
-    
-        ssl_protocols TLSv1.2 TLSv1.3;
+
+        include snippets/ssl-params.conf;
     
 ${instanceBlocks}
 }`;
