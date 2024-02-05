@@ -1,0 +1,8 @@
+node_modules
+dist
+dev_cert.pem
+dev_key.pem
+test_nginx
+.env_linux
+.env_mac
+.env

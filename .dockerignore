@@ -1,0 +1,5 @@
+node_modules
+pocketbase-instances/!.gitkeep
+pocketbase-instances/**
+pocketbase-template/!.gitkeep
+pocketbase-template/**

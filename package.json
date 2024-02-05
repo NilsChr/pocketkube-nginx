@@ -1,0 +1,32 @@
+{
+  "name": "pocketkube-node-nginx",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "bun run dist/server.js",
+    "dev": "bun run src/index.ts",
+    "build": "bun build --target bun src/index.ts --outfile=./dist/server.js",
+    "kill": "ps aux | grep pocketbase | awk '{print $2}' | xargs kill",
+    "docker:build": "docker build -t my-nginx-image .",
+    "docker:run": "docker run -d -p 8080:80 my-nginx-image"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/eventsource": "^1.1.11",
+    "@types/node": "^20.11.11",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "adm-zip": "^0.5.10",
+    "axios": "^1.6.7",
+    "cross-fetch": "^4.0.0",
+    "dotenv": "^16.3.1",
+    "eventsource": "^2.0.2",
+    "pocketbase": "^0.20.1"
+  }
+}

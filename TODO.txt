@@ -1,0 +1,6 @@
+Add listener for admin changes
+
+DONE: Generate nginx config
+move nginx config
+grant rights to nginx config
+restart nginx ( Check chat in chatgpt)
