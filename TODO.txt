@@ -4,3 +4,16 @@ DONE: Generate nginx config
 move nginx config
 grant rights to nginx config
 restart nginx ( Check chat in chatgpt)
+
+// Create Linux Setup Script
+Install Lets Encrypt and get certificate
+Install nginx
+Install bun
+Install npm
+Install pm2
+Pull gitrepo
+setup pm2
+    cd project
+    pm2 start "bun run dev" --name pocketkube
+    pm2 save
+    pm2 startup
